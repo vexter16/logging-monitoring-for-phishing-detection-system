@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Custom body style to match the dashboard theme */
+body {
+  background-color: #0f172a;
+  color: white;
+}

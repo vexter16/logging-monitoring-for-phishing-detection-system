@@ -1,0 +1,30 @@
+name: Phishing Detection CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+        
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pytest
+        
+    - name: Run Unit Tests
+      run: pytest tests/
+      
+    - name: Train Model & Check Accuracy
+      run: python phishing_pipeline.py --mode train
+      
+    - name: Build Docker Image
+      run: docker build -t my-phishing-api .
