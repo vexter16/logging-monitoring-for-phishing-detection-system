@@ -68,9 +68,6 @@ Installation
 
 Clone the repository:
 
-git clone [https://github.com/your-username/phishing-detection-system.git](https://github.com/your-username/phishing-detection-system.git)
-cd phishing-detection-system
-
 
 Start the Infrastructure (Backend, Kafka, Monitoring):
 
