@@ -63,7 +63,7 @@ export default function App() {
 
     try {
       // Try connecting to the real Docker backend
-      const response = await fetch('/predict', {
+      const response = await fetch('http://localhost:8000/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: url })
